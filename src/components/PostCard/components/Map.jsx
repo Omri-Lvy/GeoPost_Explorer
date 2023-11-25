@@ -11,7 +11,7 @@ export default function Map({ location }) {
 
     return (
         location.length > 0 ?
-        <MapContainer center={location} zoom={13} style={{ minHeight: '100%', minWidth: '100%', borderRadius: '8px' }}  scrollWheelZoom={false}>
+        <MapContainer center={location} zoom={13} style={{ minHeight: '100%', minWidth: '100%', borderBottomLeftRadius: '8px',borderBottomRightRadius: '8px' }}  scrollWheelZoom={false}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -19,6 +19,6 @@ export default function Map({ location }) {
             <Marker position={location} icon={markerIcon} />
         </MapContainer> :
             // eslint-disable-next-line react/jsx-no-undef
-            <Skeleton variant="rounded" width={'100%'} height={'100%'} sx={{borderRadius: '8px'}} />
+            <Skeleton variant="rounded" width={'100%'} height={'100%'} sx={{borderBottomLeftRadius: '8px',borderBottomRightRadius: '8px'}} />
     )
 }
