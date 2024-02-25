@@ -20,7 +20,6 @@ const PostsCardTable = () => {
                 {posts.slice((page - 1) * postsPerPage, page * postsPerPage).map((post) => (
                     <PostCard key={post.id} post={post} user={users[post["userId"]]} className="postsList__item"/>
                 ))}
-
             </div>
             <Pagination
                 onChange={handleChangePage}
